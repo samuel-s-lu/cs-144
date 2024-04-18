@@ -1,0 +1,35 @@
+body {
+    font-family: 'Courier Prime', monospace;
+    background-color: black;
+    color: whitesmoke;
+}
+
+h1 {
+    font-style: oblique;
+}
+
+nav {
+    padding: 20px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: whitesmoke;
+    box-shadow: aliceblue 10px;
+    text-align: center;
+}
+
+nav > a {
+    font-size: 1.5em;
+    color: cornflowerblue;
+}
+
+a:link:hover {
+    font-weight: bold;
+}
+
+a:visited {
+    color: blueviolet;
+}
+
+.home-container {
+    align-items: center;
+}
