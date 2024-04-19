@@ -4,17 +4,17 @@ body {
     color: whitesmoke;
 }
 
-h1 {
-    font-style: oblique;
+img {
+    border-radius: 15px;
 }
 
 nav {
     padding: 20px;
     border-style: solid;
-    border-radius: 15px;
+    border-radius: 10px;
     border-color: whitesmoke;
-    box-shadow: aliceblue 10px;
     text-align: center;
+    margin-bottom: 100px;
 }
 
 nav > a {
@@ -30,6 +30,63 @@ a:visited {
     color: blueviolet;
 }
 
-.home-container {
+#home-container {
+    display: flex;
     align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 50%;
+}
+
+.home-text {
+    flex: 1;
+}
+
+.home-text h1 {
+    font-style: oblique;
+    font-weight: lighter;
+}
+
+.title-text {
+    margin-left: 75px;
+    margin-bottom: 75px;
+}
+
+.title-text h1 {
+    margin-bottom: 0px;
+    font-style: oblique;
+    font-weight: lighter;
+}
+
+.experiences-container-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.experiences-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.experiences-entry {
+    margin-bottom: 40px;
+}
+
+.experiences-entry h2 {
+    margin-bottom: -5px;
+    font-weight: lighter;
+}
+
+.experiences-entry ul {
+    font-weight: 100;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+ul ul {
+    list-style-type: square;
 }
