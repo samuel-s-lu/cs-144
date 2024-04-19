@@ -9,6 +9,10 @@ img {
 }
 
 nav {
+    position: sticky;
+    position: -webkit-sticky;
+    background-color: black;
+    top: 10px;
     padding: 20px;
     border-style: solid;
     border-radius: 10px;
@@ -20,6 +24,7 @@ nav {
 nav > a {
     font-size: 1.5em;
     color: cornflowerblue;
+    text-decoration: none;
 }
 
 a:link:hover {
@@ -35,11 +40,12 @@ a:visited {
     align-items: center;
     margin: 0 auto;
     padding: 20px;
-    max-width: 50%;
+    max-width: 55%;
 }
 
 .home-text {
     flex: 1;
+    margin-right: 50px;
 }
 
 .home-text h1 {
@@ -89,4 +95,28 @@ li {
 
 ul ul {
     list-style-type: square;
+}
+
+table {
+    border: 2px solid whitesmoke;
+    margin: 0 auto;
+    align-self: center;
+}
+
+table caption {
+    font-size: 1.5em;
+}
+
+th, td {
+    padding: 10px;
+    border: 2px solid whitesmoke;
+    text-align: center;
+}
+
+thead, tfoot {
+    background-color: rgb(128, 0, 0);
+}
+
+tbody {
+    background-color: rgb(63, 62, 62);
 }
