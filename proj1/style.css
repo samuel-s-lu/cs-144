@@ -124,3 +124,11 @@ tbody {
 .experiences-entry p {
     font-style: oblique;
 }
+
+.cs {
+    color: lightskyblue;
+}
+
+.math {
+    color: lightsalmon;
+}
