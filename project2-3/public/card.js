@@ -46,12 +46,12 @@ export default class Card {
   }
 
   // event handler functions
-  handleDelete = (event) => {
+  handleDelete = () => {
     this.node.remove();
     this.mover.stopMoving();
   }
 
-  handleEdit = (event) => {
+  handleEdit = () => {
     this.textAreaNode.textContent = this.descriptionNode.textContent;
     this.descriptionNode.className = "description hidden";
     this.textAreaNode.className = "editDescription";
@@ -59,13 +59,13 @@ export default class Card {
     this.textAreaNode.select();
   }
 
-  handleTextAreaBlur = (event) => {
+  handleTextAreaBlur = () => {
     this.setDescription(this.textAreaNode.value || NO_DESCRIPTION_TEXT);
     this.textAreaNode.className = "editDescription hidden";
     this.descriptionNode.className = "description";
   }
 
-  handleStartMove = (event) => {
+  handleStartMove = () => {
     this.mover.stopMoving();
     this.mover.startMoving(this.node);
   }
@@ -75,7 +75,7 @@ export default class Card {
     event.dataTransfer.dropEffect = "move";
   }
 
-  handleDragEnter = (event) => {
+  handleDragEnter = () => {
     this.node.classList.add("fileHover");
   }
 
