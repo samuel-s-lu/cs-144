@@ -34,6 +34,7 @@ header {
     align-items: center;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    flex: 1;
 }
 
 header h1 {
@@ -45,8 +46,6 @@ header h1 {
 
 header #addCard {
     margin-right: 5rem;
-    /* margin-top: 0.5rem;
-    margin-bottom: 0.5rem; */
     margin-left: auto;
     display: flex;
     flex-direction: row;
@@ -74,13 +73,11 @@ header #toggleMode {
     height: auto;
     background-color: var(--title-box-bg-color);
     color: var(--title-box-text-color);
-    flex: 1;
 }
 
 #cardColor {
     width: 8em;
     height: auto;
-    flex: 1;
 }
 
 #addButton {
@@ -98,7 +95,7 @@ header #toggleMode {
     margin-right: 5rem;
     justify-content: space-around;
     min-height: 100%;
-    flex: 1;
+    /* flex: 1; */
 }
 
 #todo, #done {
