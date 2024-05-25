@@ -18,8 +18,9 @@ body {
     font-family: Helvetica, sans-serif;
     margin: 0;
     display: flex;
-    flex-flow: row wrap;
-    height: 100vh;
+    flex-direction: column;
+    overflow: auto;
+    min-height: 100vh;
     background-color: var(--bg-color);
     color: var(--text-color);
 }
@@ -27,7 +28,7 @@ body {
 header {
     background-color: #202020;
     color: white;
-    width: 100%;
+    min-width: fit-content;
     display: flex;
     flex-direction: row;
     align-items: center;
