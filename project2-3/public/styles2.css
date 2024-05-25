@@ -94,6 +94,7 @@ header #toggleMode {
     margin-right: 5rem;
     justify-content: space-around;
     min-height: 100%;
+    flex: 1;
 }
 
 #todo, #done {
