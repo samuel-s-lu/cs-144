@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8">
     <title>Task Board (Static) | Assignment 2</title>
@@ -8,6 +8,8 @@
     <!-- This line provides automatic page and style reloading when files change -->
     <script type="module" src="/lib/client/updater.js"></script>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles2.css">
   </head>
@@ -20,6 +22,8 @@
         <input type="color" name="color" id="cardColor" placeholder="Color" value="#000000">
         <button type="submit" id="addButton">Add</button>
       </form>
+
+      <button id="toggleMode" ><span class="material-symbols-outlined">light_mode</span></button>
     </header>
 
     <main id="board">

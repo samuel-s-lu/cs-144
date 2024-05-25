@@ -13,6 +13,7 @@ export default class Card {
     this.setDescription(NO_DESCRIPTION_TEXT);
 
     // setup event listeners
+    // card buttons
     this.deleteButton = this.node.querySelector(".delete");
     this.deleteButton.addEventListener("click", this.handleDelete);
 
@@ -25,14 +26,58 @@ export default class Card {
     this.textAreaNode = this.node.querySelector(".editDescription");
     this.textAreaNode.addEventListener("blur", this.handleTextAreaBlur);
 
+    // drag and drop txt files
     this.node.addEventListener("dragenter", this.handleDragEnter);
     this.node.addEventListener("dragover", this.handleDragOver);
     this.node.addEventListener("dragleave", this.handleDragLeave);
     this.node.addEventListener("drop", this.handleDrop);
 
-    // make card visible with correct color
+    // make cards themselves draggable
+    this.node.setAttribute("draggable", true);
+    this.node.addEventListener("dragstart", this.handleDragStart);
+    this.node.addEventListener("dragend", this.handleDragEnd);
+
+
+    // make card visible with correct background color and text color
     this.node.style.backgroundColor = color;
-    this.node.className = "card";
+
+    const avgRGB = this.getAvgRGB(color);
+    if (avgRGB < 128) {
+      this.node.classList.add("whiteText");
+    }
+    else {
+      this.node.classList.add("blackText");
+    }
+
+    this.node.classList.remove("template");
+    this.node.classList.add("card");
+  }
+
+  handleDragEnd = () => {
+    this.mover.handleCardDrop();
+  }
+
+  handleDragStart = () => {
+    this.mover.startDragging(this.node);
+  }
+
+  getAvgRGB(color) {
+    if (color[0] === "#") { // hex format
+      const hex = color.slice(1);
+
+      let rgb = parseInt(hex, 16);
+      const r = (rgb >> 16) & 255;
+      const g = (rgb >> 8) & 255;
+      const b = rgb & 255;
+      return (r+g+b)/3
+    }
+    else { // rgb format
+      let rgb = color.match(/\d+/g);
+      const r = parseInt(rgb[0]);
+      const g = parseInt(rgb[1]);
+      const b = parseInt(rgb[2]);
+      return (r+g+b)/3
+    }
   }
 
   addToCol(colElem, mover) {
@@ -70,13 +115,8 @@ export default class Card {
     this.mover.startMoving(this.node);
   }
 
-  handleDragOver = (event) => {
-    event.preventDefault();
-    event.dataTransfer.dropEffect = "move";
-  }
-
   handleDragEnter = () => {
-    this.node.classList.add("fileHover");
+    this.mover.fileDragEnter(this.node);
   }
 
   handleDragLeave = (event) => {
@@ -89,7 +129,6 @@ export default class Card {
   handleDrop = (event) => {
     event.preventDefault();
     const file = event.dataTransfer.files[0];
-
     if (file !== undefined && file.type === "text/plain") {
       const reader = new FileReader();
       
@@ -99,8 +138,6 @@ export default class Card {
 
       reader.readAsText(file);
     }
-
     this.node.classList.remove("fileHover");
   }
-  
 }
