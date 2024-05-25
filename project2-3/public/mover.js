@@ -21,10 +21,7 @@ export default class Mover {
   }
 
   handleCardDrop = () => {
-    // event.preventDefault();
-    console.log("made it 1");
     if (this.draggedCard) {
-      console.log("made it 2");
       this.draggedCard.classList.remove("dragging");
       this.draggedCard.classList.add("dropped");
       this.draggedCard = null;
