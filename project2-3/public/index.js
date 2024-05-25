@@ -1,7 +1,9 @@
-import App from "./app.js";
+// Commented out everthing so that on reload we don't get a bunch of cards because of localStorage and index.js
+
+// import App from "./app.js";
 
 const main = () => {
-  let app = new App();
+  // let app = new App();
 
   /* You can add cards to the board here so you don't have to type them all in every time the page refreshes. Here are a few examples: */
   // app.addCard("doing", "Write Card class", "lightblue");
