@@ -34,7 +34,6 @@ header {
     align-items: center;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    flex: 1;
 }
 
 header h1 {
@@ -95,7 +94,6 @@ header #toggleMode {
     margin-right: 5rem;
     justify-content: space-around;
     min-height: 100%;
-    /* flex: 1; */
 }
 
 #todo, #done {
