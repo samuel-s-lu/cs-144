@@ -38,6 +38,8 @@ export default class App {
     this.loadCards();
   }
 
+  noAction() {}
+
   handleDocumentClick = () => {
     let cards = document.querySelectorAll(".card:not(.template)");
     cards.forEach((card) => {

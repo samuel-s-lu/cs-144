@@ -1,7 +1,7 @@
-import "/socket.io/socket.io.js";
+import { io } from "https://cdn.socket.io/4.7.5/socket.io.esm.min.js";
 window.updateSocket = io();
 
-updateSocket.on("cssChange", (path) => {
+window.updateSocket.on("cssChange", () => {
   let timestamp = `${new Date().getTime()}`;
   let links = document.querySelectorAll("link[rel=stylesheet]");
   for (const link of links) {
@@ -13,6 +13,6 @@ updateSocket.on("cssChange", (path) => {
   }
 });
 
-updateSocket.on("reload", () => {
+window.updateSocket.on("reload", () => {
   window.location.reload();
 });
