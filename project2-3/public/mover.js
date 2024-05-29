@@ -65,6 +65,7 @@ export default class Mover {
 
   startMoving(card) {
     this.card = card;
+    this.card.moving = true;
     this.card.classList.add("moving");
     let columnTitles = document.querySelectorAll(".columnTitle");
     let cards = document.querySelectorAll(".card:not(.template)");
@@ -92,6 +93,7 @@ export default class Mover {
 
     if (this.card !== undefined) {
       this.card.classList.remove("moving");
+      this.card.moving = false;
     }
   }
 

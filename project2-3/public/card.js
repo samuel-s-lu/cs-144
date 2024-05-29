@@ -111,6 +111,11 @@ export default class Card {
   }
 
   handleStartMove = () => {
+    // if card is already selected to move, just cancel move
+    if (this.node.moving == true) {
+      this.mover.stopMoving();
+      return;
+    }
     this.mover.stopMoving();
     this.mover.startMoving(this.node);
   }
