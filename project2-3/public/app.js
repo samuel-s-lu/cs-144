@@ -32,7 +32,7 @@ export default class App {
     // store cards and theme in localStorage before unloading / switching page
     window.addEventListener("beforeunload", this.beforeUnload);
     document.addEventListener("visibilitychange", this.beforeUnload);
-    document.addEventListener("click", this.handleDocumentClick);
+    document.addEventListener("mousedown", this.handleDocumentMouseDown);
 
     // load cards stored in localStorage
     this.loadCards();
@@ -40,7 +40,7 @@ export default class App {
 
   noAction() {}
 
-  handleDocumentClick = () => {
+  handleDocumentMouseDown = () => {
     let cards = document.querySelectorAll(".card:not(.template)");
     cards.forEach((card) => {
       card.classList.remove("dropped");
