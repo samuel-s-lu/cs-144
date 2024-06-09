@@ -1,0 +1,44 @@
+body {
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#loginForm {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+
+#errorMessage {
+    color: red;
+    display: none;
+    justify-content: center;
+}
+
+#cookieMessageBox {
+    display: flex;
+    flex-flow: row;
+    max-width: 50%;
+    position: absolute;
+    bottom: 5rem;
+    background-color: beige;
+    padding: 1rem;
+    animation: dropIn 1500ms;
+}
+
+@keyframes dropIn {
+    from {
+        transform: rotate(-20deg) translateX(-100%);
+        opacity: 0.2;
+    }
+    to {
+        transform: rotate(0deg) translateX(0%);
+        opacity: 1;
+    }
+}

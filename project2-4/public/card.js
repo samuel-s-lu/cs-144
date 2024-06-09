@@ -1,3 +1,5 @@
+import { saveCards } from "./app.js";
+
 /* The text to use when description is empty */
 const NO_DESCRIPTION_TEXT = "(No description)";
 
@@ -93,7 +95,9 @@ export default class Card {
   // event handler functions
   handleDelete = () => {
     this.node.remove();
-    this.mover.stopMoving();
+    // this.mover.stopMoving();
+
+    saveCards();
   }
 
   handleEdit = () => {
@@ -108,6 +112,8 @@ export default class Card {
     this.setDescription(this.textAreaNode.value || NO_DESCRIPTION_TEXT);
     this.textAreaNode.className = "editDescription hidden";
     this.descriptionNode.className = "description";
+
+    saveCards();
   }
 
   handleStartMove = () => {

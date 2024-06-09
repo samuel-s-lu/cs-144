@@ -160,3 +160,7 @@ header #toggleMode {
 .card.dropped {
     border: 3px solid black;
 }
+
+#logout {
+    margin-right: 5rem;
+}

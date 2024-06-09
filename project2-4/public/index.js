@@ -2,7 +2,7 @@ import App from "./app.js";
 
 const main = () => {
   let app = new App();
-  app.noAction(); // Need to call a no op member function of App in order to bypass linting error
+  app.noAction();
 
   /* You can add cards to the board here so you don't have to type them all in every time the page refreshes. Here are a few examples: */
   // app.addCard("doing", "Write Card class", "lightblue");

@@ -1,3 +1,5 @@
+import { saveCards } from "./app.js";
+
 /* Text to add to the move here button */
 const MOVE_HERE_TEXT = "— Move here —";
 
@@ -26,6 +28,8 @@ export default class Mover {
       this.draggedCard.classList.add("dropped");
       this.draggedCard = null;
       this.draggingCard = false;
+
+      saveCards();
     }
   }
 
@@ -94,6 +98,8 @@ export default class Mover {
     if (this.card !== undefined) {
       this.card.classList.remove("moving");
       this.card.moving = false;
+
+      saveCards();
     }
   }
 

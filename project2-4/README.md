@@ -1,4 +1,6 @@
 Samuel Lu
 205721601
 
-I implemented the drag and drop feature to move cards for extra credit. The dragged card is ghosted (0.2 opacity) and can be dropped anywhere in any column. After getting dropped, it will have a black border until the user clicks anywhere on the webpage.
+I developed project 4 locally.
+
+The video is NOT included in the ZIP file as it would be too large to upload onto Gradescope. You can find the video submission here: https://youtu.be/DTqTAm-EdGE
